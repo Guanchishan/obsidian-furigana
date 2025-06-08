@@ -10,8 +10,8 @@ const addRubyTag = (editor: Editor, selected: string) => {
 		rubyTagMatch.index < cursor.ch &&
 		rubyTagMatch.index + rubyTagMatch[0].length > cursor.ch
 	);
-	let head = `${selected}<rt>`;
-	let tail = "</rt>";
+	let head = `${selected}<rp>(</rp><rt>`;
+	let tail = `</rt><rp>)</rp>`;
 	if (!alreadyInRuby) {
 		head = `<ruby>${head}`;
 		tail = `${tail}</ruby>`;
